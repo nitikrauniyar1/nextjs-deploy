@@ -45,7 +45,7 @@ export default function ContactPage() {
   return (
     <section
       id="contacts"
-      className="min-h-screen flex items-center bg-cover justify-center py-16 px-4"
+      className="min-h-screen flex items-center bg-cover justify-center py-16 overflow-hidden px-4"
       style={{ backgroundImage: "url('/background.jpg')" }}
     >
       <motion.div

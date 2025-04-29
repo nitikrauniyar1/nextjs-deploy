@@ -72,7 +72,7 @@ const HomePage = () => {
         >
           I'm a dedicated and passionate full stack web developer focused on
           <br className="hidden md:inline" />
-          building websites that are both beautiful and functional with the use
+           building websites that are both beautiful and functional with the use
           <br className="hidden md:inline" /> of AI. I love finding solutions to
           challenges and creating online
           <br className="hidden md:inline" />

@@ -50,7 +50,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <section id="projects" className="py-16 text-white bg-cover" style={{ backgroundImage: "url('/background.jpg')" }}>
+    <section id="projects" className="py-16 text-white bg-cover overflow-hidden" style={{ backgroundImage: "url('/background.jpg')" }}>
       {/* Animated Gradient Background */}
       <div className="absolute pointer-events-none"></div>
 

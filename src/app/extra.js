@@ -62,7 +62,7 @@ export default function ExtrasPage() {
   return (
     <section
       id="extras"
-      className="py-16 text-white bg-cover relative"
+      className="py-16 overflow-hidden text-white bg-cover relative"
       style={{ backgroundImage: "url('/background.jpg')" }}
     >
       <motion.div

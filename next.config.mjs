@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export', // Remove the extra curly braces around this line
+    output: 'export',
+    images: {
+      unoptimized: true,
+    },
   };
   
   export default nextConfig;

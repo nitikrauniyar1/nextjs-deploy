@@ -41,7 +41,7 @@ export default function ServicesPage() {
   return (
     <section
       id="services"
-      className="py-16 text-white bg-cover"
+      className="py-16 text-white bg-cover overflow-hidden"
       style={{ backgroundImage: "url('/background.jpg')" }}
     >
       {/* Section Header */}
