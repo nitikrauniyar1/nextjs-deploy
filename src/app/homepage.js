@@ -70,7 +70,7 @@ const HomePage = () => {
           className="mb-6 mt-9 text-base md:text-base font-semibold"
           style={{ color: "rgb(178 178 178)" }}
         >
-          I'm a dedicated and passionate full stack web developer focused on
+          I'm a dedicated and good full stack web developer focused on
           <br className="hidden md:inline" />
            building websites that are both beautiful and functional with the use
           <br className="hidden md:inline" /> of AI. I love finding solutions to
