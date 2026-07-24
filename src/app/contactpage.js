@@ -25,7 +25,7 @@ export default function ContactPage() {
 
     emailjs
       .sendForm(
-        'service_7cahvuw', // Your EmailJS service ID
+        'service_vz0ad3r', // Your EmailJS service ID
         'template_uwhr118', // Your EmailJS template ID
         formRef.current,
         '9DKhv51gdgOrrs9mO' // Your EmailJS public key
