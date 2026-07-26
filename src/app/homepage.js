@@ -111,7 +111,7 @@ const HomePage = () => {
           src={Mypic}
           alt="My Picture"
           fill
-          style={{ objectFit: "contain" }}
+          style={{ objectFit: "contain", transform: "scale(1.3)" }}
           priority
         />
       </div>
