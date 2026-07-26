@@ -3,114 +3,107 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+const socialLinks = [
+  {
+    name: "GitHub",
+    url: "https://github.com/nitikrauniyar1",
+    path: (
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+    ),
+  },
+  {
+    name: "Facebook",
+    url: "https://facebook.com/nitikrauniyar",
+    path: (
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    ),
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/nitikrauniyar",
+    path: (
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+    ),
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/nitik-rauniyar-381873301/",
+    path: (
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+    ),
+  },
+];
+
 const Footer = () => {
   return (
-    <footer className="bg-[#09101a] text-gray-400 pt-10 pb-6 px-6 md:px-12">
+    <footer className="bg-[#080d14] text-gray-400 border-t border-[#121c28] pt-12 pb-8 px-6 md:px-12">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
         className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
       >
-        {/* Left Side - Logo */}
+        {/* Left Side - Brand Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
           className="flex items-center space-x-2 cursor-pointer"
         >
-          <span className="text-2xl font-extrabold text-green-400">
+          <span className="text-2xl font-extrabold tracking-wider text-white">
             NITIK<span className="text-green-400">.</span>
           </span>
         </motion.div>
 
         {/* Center - Navigation Links */}
-        <div className="flex flex-wrap justify-center gap-6 text-sm">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-sm font-medium">
           {["Home", "About", "Services", "Projects", "Contacts"].map((item, index) => (
             <motion.a
               key={item}
               href={`#${item.toLowerCase()}`}
               className="hover:text-green-400 transition-colors duration-300"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 300, delay: index * 0.05 }}
+              whileHover={{ y: -2 }}
+              transition={{ type: "spring", stiffness: 300, delay: index * 0.04 }}
             >
               {item}
             </motion.a>
           ))}
         </div>
 
-        {/* Right Side - Social Links */}
-        <div className="flex items-center gap-5">
-          {/* GitHub */}
-          <motion.a
-            href="https://github.com/nitikrauniyar1"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.2 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="hover:text-white"
-          >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.8-1.5-3.8-1.5-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.5-.7.5-.7-.9-1-.7-2.4-.7-2.4 0-1.4 1-2.1 2-2.1 1.1 0 1.7.8 1.9 1.2.7 1.3 2 1 2.5.8.1-.5.3-.8.6-1-.8-.1-1.5-.4-2-.9-.6-.6-.9-1.4-.9-2.3 0-1.7 1.2-3 2.9-3.2 0 0 .9-.2 2.9 1 .5-.1 1-.2 1.5-.2s1 .1 1.5.2c2-1.2 2.9-1 2.9-1 1.7.2 2.9 1.5 2.9 3.2 0 .9-.3 1.7-.9 2.3-.5.5-1.2.8-2 .9.3.2.6.7.6 1.4v2.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z" />
-            </svg>
-          </motion.a>
-
-          {/* Facebook */}
-          <motion.a
-            href="https://facebook.com/nitikrauniyar"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.2 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="hover:text-white"
-          >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22.675 0h-21.35C.6 0 0 .6 0 1.325v21.351C0 23.4.6 24 1.325 24h11.495v-9.294H9.691V11.01h3.129V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.4 24 24 23.4 24 22.675V1.325C24 .6 23.4 0 22.675 0z" />
-            </svg>
-          </motion.a>
-
-          {/* Instagram */}
-          <motion.a
-            href="https://instagram.com/nitikrauniyar"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.2 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="hover:text-white"
-          >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.056 1.96.24 2.42.41a4.92 4.92 0 011.79 1.16 4.92 4.92 0 011.16 1.79c.17.46.354 1.25.41 2.42.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.96-.41 2.42a4.92 4.92 0 01-1.16 1.79 4.92 4.92 0 01-1.79 1.16c-.46.17-1.25.354-2.42.41-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.96-.24-2.42-.41a4.92 4.92 0 01-1.79-1.16 4.92 4.92 0 01-1.16-1.79c-.17-.46-.354-1.25-.41-2.42C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.85c.056-1.17.24-1.96.41-2.42a4.92 4.92 0 011.16-1.79 4.92 4.92 0 011.79-1.16c.46-.17 1.25-.354 2.42-.41C8.416 2.212 8.8 2.2 12 2.2zm0-2.2C8.735 0 8.332.014 7.052.072 5.765.13 4.653.344 3.68.693a7.165 7.165 0 00-2.593 1.64A7.165 7.165 0 00.693 4.88C.344 5.853.13 6.965.072 8.252.014 9.532 0 9.935 0 12c0 2.065.014 2.468.072 3.748.058 1.287.272 2.399.621 3.372a7.165 7.165 0 001.64 2.593 7.165 7.165 0 002.593 1.64c.973.349 2.085.563 3.372.621C9.532 23.986 9.935 24 12 24c2.065 0 2.468-.014 3.748-.072 1.287-.058 2.399-.272 3.372-.621a7.165 7.165 0 002.593-1.64 7.165 7.165 0 001.64-2.593c.349-.973.563-2.085.621-3.372C23.986 14.468 24 14.065 24 12c0-2.065-.014-2.468-.072-3.748-.058-1.287-.272-2.399-.621-3.372a7.165 7.165 0 00-1.64-2.593 7.165 7.165 0 00-2.593-1.64c-.973-.349-2.085-.563-3.372-.621C14.468.014 14.065 0 12 0zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" />
-            </svg>
-          </motion.a>
-
-          {/* LinkedIn */}
-          <motion.a
-            href="https://www.linkedin.com/in/nitik-rauniyar-381873301/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.2 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="hover:text-white"
-          >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M4.98 3.5C4.98 5 3.88 6 2.5 6S0 5 0 3.5 1.1 1 2.5 1s2.48 1 2.48 2.5zM.5 24h4V8h-4v16zM8.5 8h3.7v2.2h.1c.5-1 1.7-2.2 3.6-2.2 3.9 0 4.6 2.6 4.6 6v9.8h-4V15c0-2.4-.1-5.5-3.3-5.5-3.3 0-3.8 2.5-3.8 5.3v9h-4V8z" />
-            </svg>
-          </motion.a>
+        {/* Right Side - Custom Styled Social Link Buttons */}
+        <div className="flex items-center gap-3">
+          {socialLinks.map((social) => (
+            <motion.a
+              key={social.name}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.name}
+              whileHover={{ scale: 1.15, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="w-10 h-10 flex items-center justify-center rounded-xl bg-[#101721] border border-[#1d2938] text-gray-400 hover:text-green-400 hover:border-green-400/60 hover:shadow-[0_0_18px_rgba(85,230,165,0.3)] transition-all duration-300"
+            >
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                {social.path}
+              </svg>
+            </motion.a>
+          ))}
         </div>
       </motion.div>
 
-      {/* Bottom Text */}
+      {/* Bottom Copyright Text */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        className="text-center text-xs text-gray-600 mt-8"
+        transition={{ delay: 0.2, duration: 0.8 }}
+        className="text-center text-xs text-gray-500 mt-10 pt-6 border-t border-[#101721]"
       >
         © {new Date().getFullYear()} Developed with ❤️ by{" "}
         <a
           href="https://nitikrauniyar.com.np/"
           rel="noopener noreferrer"
-          className="hover:text-green-400"
+          className="font-semibold hover:text-green-400 transition-colors duration-200"
         >
           Nitik
         </a>
