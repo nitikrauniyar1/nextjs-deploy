@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Mypic from "../../public/mypic.png";
-import frame from "../../public/frame.png";
 import PlayIcon from "../../public/play.svg";
 import Background from "../../public/background.jpg";
 
@@ -56,7 +55,7 @@ const HomePage = () => {
   return (
     <div
       id="home"
-      className="Home flex flex-col md:flex-row items-center justify-center pt-2 bg-cover bg-center"
+      className="Home flex flex-col md:flex-row items-center justify-center pt-2 px-6 lg:px-16 md:gap-6 lg:gap-10 bg-cover bg-center"
       style={{
         minHeight: "calc(100vh - 64px)",
         backgroundImage: `url(${Background.src})`,
@@ -106,12 +105,8 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div
-        className="order-1 md:order-2 hm-img relative w-[280px] h-[320px] md:w-[360px] md:h-[400px] mt-8 md:mt-0 bg-contain bg-no-repeat bg-center"
-        style={{
-          backgroundImage: `url(${frame.src})`,
-        }}
-      >
+      {/* Added mt-[20px] to match your dev tools screenshot */}
+      <div className="order-1 md:order-2 hm-img relative w-[280px] h-[320px] md:w-[360px] md:h-[400px] lg:w-[420px] lg:h-[480px] max-w-full mt-[20px] drop-shadow-2xl">
         <Image
           src={Mypic}
           alt="My Picture"
