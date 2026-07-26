@@ -43,7 +43,8 @@ const HomePage = () => {
   }, [subIndex, deleting, index]);
 
   const handleClick = () => {
-    const driveUrl = "https://drive.google.com/file/d/1X5C2NG1nmzqVS72Ql_95kGfwZx1cOn4p/view; // Replace with actual file ID
+    const driveUrl =
+  "https://drive.google.com/file/d/1X5C2NG1nmzqVS72Ql_95kGfwZx1cOn4p/view"; // Replace with actual file ID
     const win = window.open(driveUrl, "_blank");
     if (win) {
       win.focus();
