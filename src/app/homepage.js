@@ -43,7 +43,7 @@ const HomePage = () => {
 
   const handleClick = () => {
     const driveUrl =
-  "https://drive.google.com/file/d/1X5C2NG1nmzqVS72Ql_95kGfwZx1cOn4p/view"; // Replace with actual file ID
+      "https://drive.google.com/file/d/1X5C2NG1nmzqVS72Ql_95kGfwZx1cOn4p/view"; // Replace with actual file ID
     const win = window.open(driveUrl, "_blank");
     if (win) {
       win.focus();
@@ -72,7 +72,7 @@ const HomePage = () => {
         >
           I'm a dedicated and good full stack web developer focused on
           <br className="hidden md:inline" />
-           building websites that are both beautiful and functional with the use
+          building websites that are both beautiful and functional with the use
           <br className="hidden md:inline" /> of AI. I love finding solutions to
           challenges and creating online
           <br className="hidden md:inline" />
@@ -105,15 +105,106 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Added mt-[20px] to match your dev tools screenshot */}
-      <div className="order-1 md:order-2 hm-img relative w-[280px] h-[320px] md:w-[360px] md:h-[400px] lg:w-[420px] lg:h-[480px] max-w-full mt-[20px] drop-shadow-2xl">
-        <Image
-          src={Mypic}
-          alt="My Picture"
-          fill
-          style={{ objectFit: "contain", transform: "scale(1.3)" }}
-          priority
-        />
+      {/* Hexagonal Profile Frame Container */}
+      <div className="order-1 md:order-2 relative w-[320px] h-[368px] md:w-[380px] md:h-[437px] lg:w-[420px] lg:h-[483px] mt-[20px] flex items-center justify-center drop-shadow-2xl">
+        
+        {/* SVG Definition for Rounded Hexagon Clip Path */}
+        <svg className="absolute w-0 h-0" aria-hidden="true">
+          <defs>
+            <clipPath id="hex-profile-clip" clipPathUnits="objectBoundingBox">
+              <path d="M 0.5 0.05 C 0.53 0.05 0.57 0.07 0.6 0.09 L 0.88 0.23 C 0.94 0.26 0.95 0.30 0.95 0.34 L 0.95 0.66 C 0.95 0.70 0.94 0.74 0.88 0.77 L 0.6 0.91 C 0.57 0.93 0.53 0.95 0.5 0.95 C 0.47 0.95 0.43 0.93 0.4 0.91 L 0.12 0.77 C 0.06 0.74 0.05 0.70 0.05 0.66 L 0.05 0.34 C 0.05 0.30 0.06 0.26 0.12 0.23 L 0.4 0.09 C 0.43 0.07 0.47 0.05 0.5 0.05 Z" />
+            </clipPath>
+            <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+        </svg>
+
+        {/* 1. Clipped Image Container */}
+        <div
+          className="absolute inset-[3%] z-0 bg-[#12161b] overflow-hidden flex items-center justify-center"
+          style={{ clipPath: "url(#hex-profile-clip)" }}
+        >
+          {/* Subtle Ambient Background Spotlight */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,_rgba(85,230,165,0.18)_0%,_transparent_65%)] pointer-events-none" />
+
+          {/* Scaled down slightly & shifted down for perfect alignment */}
+          <div className="relative w-full h-full transform scale-95 translate-y-5">
+            <Image
+              src={Mypic}
+              alt="My Picture"
+              fill
+              className="object-cover object-top"
+              priority
+            />
+          </div>
+
+          {/* Balanced Bottom Gradient Fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#12161b] via-[#12161b]/80 to-transparent pointer-events-none z-10" />
+        </div>
+
+        {/* 2. Precision Cyber Frame Overlay */}
+        <svg
+          viewBox="0 0 400 460"
+          className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+        >
+          {/* Inner Dark Beveled Border */}
+          <path
+            d="M 25 195 L 25 140 Q 25 118 60 100 L 180 35 Q 200 25 220 35 L 340 100 Q 375 118 375 140 L 375 195 L 375 265 L 375 320 Q 375 342 340 360 L 220 425 Q 200 435 180 425 L 60 360 Q 25 342 25 320 L 25 265 Z"
+            fill="none"
+            stroke="#12161b"
+            strokeWidth="12"
+          />
+
+          {/* Top Mint-Green Bracket */}
+          <path
+            d="M 25 195 L 25 140 Q 25 118 60 100 L 180 35 Q 200 25 220 35 L 340 100 Q 375 118 375 140 L 375 195"
+            fill="none"
+            stroke="rgb(85,230,165)"
+            strokeWidth="8"
+            strokeLinecap="round"
+            filter="url(#neon-glow)"
+          />
+
+          {/* Bottom Mint-Green Bracket */}
+          <path
+            d="M 25 265 L 25 320 Q 25 342 60 360 L 180 425 Q 200 435 220 425 L 340 360 Q 375 342 375 320 L 375 265"
+            fill="none"
+            stroke="rgb(85,230,165)"
+            strokeWidth="8"
+            strokeLinecap="round"
+            filter="url(#neon-glow)"
+          />
+
+          {/* Left Side Vertical Bar */}
+          <rect
+            x="19"
+            y="207"
+            width="12"
+            height="46"
+            rx="4"
+            fill="#1e293b"
+            stroke="#334155"
+            strokeWidth="2"
+          />
+
+          {/* Right Side Vertical Bar */}
+          <rect
+            x="369"
+            y="207"
+            width="12"
+            height="46"
+            rx="4"
+            fill="#1e293b"
+            stroke="#334155"
+            strokeWidth="2"
+          />
+        </svg>
+
       </div>
     </div>
   );
